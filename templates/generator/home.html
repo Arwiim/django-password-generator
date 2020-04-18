@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Password Generator
+{% endblock title %}
+
+
+{% block content %}
+<div class="container text-center">
+    <h1 style="color:cadetblue;">Password Generator</h1>
+    <h4>Type your password length</h4>
+    <form action="{% url 'password' %}" >
+        <input type="text" name="length" placeholder="Default = 12">
+            <br>
+            <input type="checkbox" name="uppercase">Uppercase
+            <br>
+            <input type="checkbox" name="numbers">Numbers
+            <br>
+            <input type="checkbox" name="special">Special
+            <br>
+        <input type="submit" value="Generate Password" class="btn btn-primary">
+    </form>
+    
+    <a href="{% url 'about' %}">About Page</a>
+    </div>    
+{% endblock content %}
